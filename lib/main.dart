@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/userList/view/screen/user_screen.dart';
 import 'package:getx/view/screen/counter_page.dart';
 
 void main()
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: [
-        GetPage(name: '/', page: () => CounterPage(),)
+        GetPage(name: '/', page: () => UserScreen(),)
       ],
     );
   }
