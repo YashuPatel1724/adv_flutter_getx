@@ -1,16 +1,15 @@
-# getx
+<h1 align="center">👉 Counter app 👈</h1>
 
-A new Flutter project.
+<h3 align="center"> Counter App Video </h3>
+<div align="center">
+ <video src="https://github.com/user-attachments/assets/ced9cb74-01d7-413d-93ff-9301352da610"> 
+</video>
+</div>
 
-## Getting Started
+<h3 align="center">👉 Counter App Images👈</h3>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div align="center">
+  <img height="550"  src="https://github.com/user-attachments/assets/1e034842-d2d1-4358-926a-52c250888bcf" />
+</div>
+<div align="center">
+<a href="https://github.com/YashuPatel1724/adv_flutter_getx/tree/master/lib">-> 📂 Go To Dart File 📂 </a>
