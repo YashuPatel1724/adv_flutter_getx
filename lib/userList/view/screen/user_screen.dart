@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:getx/userList/modal/user_modal.dart';
 import 'package:getx/userList/utils/global.dart';
 
+import '../componets/edit_button.dart';
+import '../componets/floating_button.dart';
+
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});
 
@@ -31,59 +34,7 @@ class UserScreen extends StatelessWidget {
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton(
-                      onPressed: () {
-                        userController.updateData(index);
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: Text('Update User'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                TextField(
-                                  controller: userController.txtid,
-                                  decoration: InputDecoration(
-                                      hintText: 'Enter your id'),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                TextField(
-                                  controller: userController.txtname,
-                                  decoration: InputDecoration(
-                                      hintText: 'Enter your name'),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                TextField(
-                                  controller: userController.txtwork,
-                                  decoration: InputDecoration(
-                                      hintText: 'Enter your work'),
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              MaterialButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text('Cancle'),
-                              ),
-                              MaterialButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                  userController.saveData(index);
-                                },
-                                child: Text('Save'),
-                              )
-                            ],
-                          ),
-                        );
-
-                      },
-                      icon: Icon(Icons.edit)),
+                  editButton(index, context),
                   IconButton(
                       onPressed: () {
                         userController.deleteData(index);
@@ -96,59 +47,9 @@ class UserScreen extends StatelessWidget {
           itemCount: userController.userList.length,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text('Add User'),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  TextField(
-                    controller: userController.txtid,
-                    decoration: InputDecoration(hintText: 'Enter your id'),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextField(
-                    controller: userController.txtname,
-                    decoration: InputDecoration(hintText: 'Enter your name'),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextField(
-                    controller: userController.txtwork,
-                    decoration: InputDecoration(hintText: 'Enter your work'),
-                  ),
-                ],
-              ),
-              actions: [
-                MaterialButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text('Cancle'),
-                ),
-                MaterialButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    UserModal user = UserModal(
-                        int.parse(userController.txtid.text),
-                        userController.txtname.text,
-                        userController.txtwork.text);
-                    userController.addData(user);
-                  },
-                  child: Text('Save'),
-                )
-              ],
-            ),
-          );
-        },
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: buildFloatingActionButton(context),
     );
   }
+
+
 }

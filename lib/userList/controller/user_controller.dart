@@ -10,9 +10,9 @@ class UserController extends GetxController
   TextEditingController txtname = TextEditingController();
   TextEditingController txtwork = TextEditingController();
 
-  void addData(UserModal user)
+  void addData(Map user)
   {
-    userList.add(user);
+    userList.add(UserModal.fromMap(user));
   }
   void updateData(int index)
   {
